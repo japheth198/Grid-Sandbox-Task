@@ -1,0 +1,92 @@
+:root {
+    --main-padding: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.6fr 3fr 2fr 0.8fr;
+    grid-template-areas: 
+    "HEADER HEADER HEADER"
+    "HEADER HEADER HEADER"
+    "FEATURE FEATURE FEATURE "
+    "FEATURE FEATURE FEATURE "
+    "SIGN UP SIGN UP SIGN UP "
+    "CONTENT CONTENT CONTENT "
+    "CONTENT CONTENT CONTENT ";
+    gap: 5px;
+}
+
+HEADER {
+    background: cadetblue;
+    padding: var(--main-padding);
+    grid-area: HEADER;
+}
+
+#FEATURE1 {
+    background: rgb(245, 180, 82);
+    padding: var(--main-padding);
+    grid-area: FEATURE1;
+}
+
+#FEATURE2 {
+    background: rgb(131, 80, 214);
+    padding: var(--main-padding);
+    grid-area: FEATURE2;
+}
+
+#FEATURE3 {
+    background: rgb(18, 141, 125);
+    padding: var(--main-padding);
+    grid-area: FEATURE3;
+}
+
+#SIGN_UP {
+    background: rgb(223, 107, 72);
+    padding: var(--main-padding);
+    grid-area: SIGN UP;
+}
+
+CONTENT {
+    background: darkslategray;
+    padding: var(--main-padding);
+    grid-area: CONTENT;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: 
+        "HEADER HEADER"
+        "CONTENT CONTENT"
+        "CONTENT CONTENT"
+        "SIGN UP FEATURE1"
+        "FEATURE2 FEATURE3"        
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 1fr 3fr 2fr 2fr 2fr 0.5fr;
+        grid-template-areas: 
+        "HEADER"
+        "CONTENT"
+        "CONTENT"
+        "SIGN UP"
+        "FEATURE1"
+        "FEATURE2" 
+        "FEATURE3"
+    }
+}
